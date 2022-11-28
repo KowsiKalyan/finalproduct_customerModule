@@ -1,0 +1,1 @@
+http://vendoreshop.wrteam.co.in/admin/webhook/myfatoorah_success_url?txn_id=1&order_id=1&currency=1&amount=5
