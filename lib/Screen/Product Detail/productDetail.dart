@@ -2236,9 +2236,10 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
   }
 
   getvariantPart() {
+    log(_selectedIndex.toString());
     return widget.model!.attributeList!.isNotEmpty
         ? Container(
-            color: Theme.of(context).colorScheme.white,
+            color: Colors.yellow,
             child: Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: ListView.builder(
@@ -2259,33 +2260,44 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                   int? varSelected;
                   List<String> wholeAtt = widget.model!.attrIds!.split(',');
                   for (int i = 0; i < att.length; i++) {
-                    Widget itemLabel;
+                    List<String> color = ['Red'];
+                    log('loop entering-----');
+                    log(att.toString());
+                    Widget? itemLabel;
                     if (attSType[i] == '1') {
+                      log('colorrr');
+                      log(attSType[i]);
+
                       String clr = (attSValue[i].substring(1));
+                      log('clr-----$clr');
+
                       String color = '0xff$clr';
+                      log('color-----------$color');
                       itemLabel = Container(
                         width: 35,
                         height: 35,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: _selectedIndex[index] == (i)
+                          color: _selectedIndex[index] == i
                               ? colors.primary
                               : colors.black12,
                         ),
                         child: Center(
                           child: Container(
-                            width: 25,
+                            width: 45,
                             height: 25,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: Color(
-                                int.parse(color),
+                                int.parse(color.toString()),
                               ),
                             ),
                           ),
                         ),
                       );
                     } else if (attSType[i] == '2') {
+                      log('colorrr');
+                      log(attSType[i]);
                       itemLabel = Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(

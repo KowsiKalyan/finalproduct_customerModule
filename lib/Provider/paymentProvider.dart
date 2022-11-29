@@ -181,6 +181,7 @@ class PaymentProvider extends ChangeNotifier {
                 payment['midtrans_client_key'];
           }
           if (razorpay) {
+            print(payment);
             context.read<CartProvider>().razorpayId =
                 payment['rzp_test_GJxJnAJ9ck2MUl,zWcgE4EumePUQxdZNDZ1gp6L'];
           }
