@@ -1169,7 +1169,9 @@ class _SearchState extends State<Explore> with TickerProviderStateMixin {
                     ),
                   ),
                   GestureDetector(
-                    onTap: filterDialog,
+                    onTap: () {
+                      filterDialog();
+                    },
                     child: Row(
                       children: [
                         const Icon(Icons.filter_alt_outlined),
@@ -1240,6 +1242,7 @@ class _SearchState extends State<Explore> with TickerProviderStateMixin {
   }
 
   void filterDialog() {
+    print('-------------------');
     showModalBottomSheet(
       context: context,
       enableDrag: false,

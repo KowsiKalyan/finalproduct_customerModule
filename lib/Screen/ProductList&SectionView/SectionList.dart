@@ -612,24 +612,26 @@ class StateSection extends State<SectionList> with TickerProviderStateMixin {
                                         ),
                                       ),
                                     ),
-                                    RangeSlider(
-                                      values: currentRangeValues!,
-                                      min: double.parse(minPrice),
-                                      max: double.parse(maxPrice),
-                                      divisions: 10,
-                                      labels: RangeLabels(
-                                        currentRangeValues!.start
-                                            .round()
-                                            .toString(),
-                                        currentRangeValues!.end
-                                            .round()
-                                            .toString(),
-                                      ),
-                                      onChanged: (RangeValues values) {
-                                        currentRangeValues = values;
-                                        setState(() {});
-                                      },
-                                    ),
+                                    currentRangeValues == null
+                                        ? Container()
+                                        : RangeSlider(
+                                            values: currentRangeValues!,
+                                            min: double.parse(minPrice),
+                                            max: double.parse(maxPrice),
+                                            divisions: 10,
+                                            labels: RangeLabels(
+                                              currentRangeValues!.start
+                                                  .round()
+                                                  .toString(),
+                                              currentRangeValues!.end
+                                                  .round()
+                                                  .toString(),
+                                            ),
+                                            onChanged: (RangeValues values) {
+                                              currentRangeValues = values;
+                                              setState(() {});
+                                            },
+                                          ),
                                   ],
                                 );
                               } else {

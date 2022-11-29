@@ -282,7 +282,7 @@ class StateProduct extends State<ProductList> with TickerProviderStateMixin {
       parameter[MAXPRICE] = currentRangeValues!.end.round().toString();
     }
     context.read<ProductListProvider>().setProductListParameter(parameter);
-    tempList.clear();
+    // tempList.clear(); -----by me
     // productList.clear();
 
     Future.delayed(Duration.zero).then(
@@ -300,6 +300,9 @@ class StateProduct extends State<ProductList> with TickerProviderStateMixin {
               filterList = value['filters'];
               minPrice = value[MINPRICE].toString();
               maxPrice = value[MAXPRICE].toString();
+              currentRangeValues =
+                  RangeValues(double.parse(minPrice), double.parse(maxPrice));
+
               _isFirstLoad = false;
             }
             if ((offset) < total) {

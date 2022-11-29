@@ -182,7 +182,7 @@ class PaymentProvider extends ChangeNotifier {
           }
           if (razorpay) {
             context.read<CartProvider>().razorpayId =
-                payment['razorpay_key_id'];
+                payment['rzp_test_GJxJnAJ9ck2MUl,zWcgE4EumePUQxdZNDZ1gp6L'];
           }
           if (paystack) {
             context.read<CartProvider>().paystackId =
