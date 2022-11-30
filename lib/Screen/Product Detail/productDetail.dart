@@ -1688,16 +1688,16 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                                   GetTitleWidget(
                                     title: widget.model!.name ?? '',
                                   ),
-                                  available! || outOfStock!
-                                      ? GetPrice(
-                                          pos: selectIndex,
-                                          from: true,
-                                          model: widget.model)
-                                      : GetPrice(
-                                          pos: widget.model!.selVarient,
-                                          from: false,
-                                          model: widget.model,
-                                        ),
+                                  // available! || outOfStock!
+                                  //     ? GetPrice(
+                                  //         pos: selectIndex,
+                                  //         from: true,
+                                  //         model: widget.model)
+                                  //     : GetPrice(
+                                  //         pos: widget.model!.selVarient,
+                                  //         from: false,
+                                  //         model: widget.model,
+                                  //       ),
                                   GetRatttingWidget(
                                     ratting: widget.model!.rating!,
                                     noOfRatting: widget.model!.noOfRating!,
@@ -2239,7 +2239,6 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
     log(_selectedIndex.toString());
     return widget.model!.attributeList!.isNotEmpty
         ? Container(
-            color: Colors.yellow,
             child: Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: ListView.builder(
@@ -2261,18 +2260,18 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                   List<String> wholeAtt = widget.model!.attrIds!.split(',');
                   for (int i = 0; i < att.length; i++) {
                     List<String> color = ['Red'];
-                    log('loop entering-----');
-                    log(att.toString());
+                    // log('loop entering-----');
+                    // log(att.toString());
                     Widget? itemLabel;
                     if (attSType[i] == '1') {
-                      log('colorrr');
-                      log(attSType[i]);
+                      // log('colorrr');
+                      // log(attSType[i]);
 
                       String clr = (attSValue[i].substring(1));
-                      log('clr-----$clr');
+                      // log('clr-----$clr');
 
                       String color = '0xff$clr';
-                      log('color-----------$color');
+                      // log('color-----------$color');
                       itemLabel = Container(
                         width: 35,
                         height: 35,
@@ -2295,9 +2294,10 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                           ),
                         ),
                       );
+                      log('endingg----');
                     } else if (attSType[i] == '2') {
-                      log('colorrr');
-                      log(attSType[i]);
+                      // log('seconddd');
+                      // log(attSType[i]);
                       itemLabel = Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -2371,8 +2371,10 @@ class StateItem extends State<ProductDetail> with TickerProviderStateMixin {
                         ),
                       );
                     }
-                    if (_selectedIndex[index] != null &&
-                        wholeAtt.contains(attId[i])) {
+                    log('------------------------------------------');
+                    if (_selectedIndex[index] != null ||
+                        wholeAtt.contains(attId[index])) {
+                      log('hiii');
                       choiceContainer = Padding(
                         padding: const EdgeInsets.only(
                           right: 10,
