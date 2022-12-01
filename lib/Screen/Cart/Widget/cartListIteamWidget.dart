@@ -358,7 +358,7 @@ class _CartListViewLayOutState extends State<CartListViewLayOut> {
                             Text(
                               ' ${DesignConfiguration.getPriceFormat(context, price)!} ',
                               style: TextStyle(
-                                color: Theme.of(context).colorScheme.blue,
+                                color: colors.primary,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 12,
                                 fontFamily: 'ubuntu',

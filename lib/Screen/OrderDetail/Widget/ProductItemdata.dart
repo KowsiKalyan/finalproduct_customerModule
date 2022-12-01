@@ -190,8 +190,7 @@ class _ProductItemWidgetState extends State<ProductItemWidget> {
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1!
-                              .copyWith(
-                                  color: Theme.of(context).colorScheme.blue),
+                              .copyWith(color: colors.primary),
                         ),
                       ],
                     ),

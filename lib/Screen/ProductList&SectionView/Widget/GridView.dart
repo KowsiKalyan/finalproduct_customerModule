@@ -825,7 +825,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                         Text(
                           ' ${DesignConfiguration.getPriceFormat(context, price)!}',
                           style: TextStyle(
-                            color: Theme.of(context).colorScheme.blue,
+                            color: colors.primary,
                             fontSize: textFontSize14,
                             fontWeight: FontWeight.w700,
                             fontStyle: FontStyle.normal,

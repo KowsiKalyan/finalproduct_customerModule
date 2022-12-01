@@ -331,7 +331,7 @@ class _SaveLatterIteamState extends State<SaveLatterIteam> {
                             Text(
                               ' ${DesignConfiguration.getPriceFormat(context, price)!} ',
                               style: TextStyle(
-                                color: Theme.of(context).colorScheme.blue,
+                                color: colors.primary,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'ubuntu',
                               ),

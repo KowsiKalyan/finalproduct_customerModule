@@ -97,7 +97,7 @@ class GetPrice extends StatelessWidget {
             Text(
               '${DesignConfiguration.getPriceFormat(context, price)!} ',
               style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Theme.of(context).colorScheme.blue,
+                    color: colors.primary,
                     fontWeight: FontWeight.w700,
                     fontStyle: FontStyle.normal,
                     fontSize: 20.0,
@@ -190,7 +190,7 @@ class GetPrice extends StatelessWidget {
             Text(
               '${DesignConfiguration.getPriceFormat(context, nodisPrice)!} ',
               style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Theme.of(context).colorScheme.blue,
+                    color: colors.primary,
                     fontWeight: FontWeight.w700,
                     fontStyle: FontStyle.normal,
                     fontSize: 20.0,
